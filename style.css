@@ -11,6 +11,16 @@ body {
   height: 100%;
   width: 100%;
 }
+#crsr  {
+  height: 2.5vw; 
+  width: 2.5vw;
+  border-radius: 50%; 
+  position: fixed;
+  z-index: 9999;
+  border: 2px solid rgb(195, 195, 195);
+  mix-blend-mode: difference;
+  transform: translate(-50% ,-50%);
+}
 #loader {
   height: 100%;
   width: 100%;
@@ -18,6 +28,7 @@ body {
   z-index: 99;
   background-color: #000000;
   padding: 24vh 10vw;
+  display: none;
 }
 #line {
   height: fit-content;
@@ -55,10 +66,49 @@ body {
 }
 
 #line>h2 {
-  font-size: 6vw;
+  font-size: 4.5vw;
   padding-left: 3vw;
   padding-right: 1vw;
+  font-weight: 900;
+  opacity: 0;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
+
+@keyframes anime1 {
+  0% {
+    font-family: "plain light";
+    -webkit-text-stroke: 1px #fff;
+    color: white;
+    font-weight: 500;
+    opacity: 1;
+
+    
+  }
+  48% {
+    font-family: "plain light";
+    font-weight: 500;
+    color: white;
+    -webkit-text-stroke: 1px white;
+    opacity: 0;
+  }
+  50% {
+    font-family: "silk serif";
+    font-weight: 500;
+    -webkit-text-stroke: 1px white;
+    color: rgb(0, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    font-family: "silk serif";
+    font-weight: 500;
+    -webkit-text-stroke: 1px white;
+    color: rgb(0, 0, 0);
+    opacity: 0;
+
+  }
+}
+
 #main {
   position: relative;
   background-color: #000;
@@ -67,4 +117,62 @@ body {
 #page1 {
   height: 100vh;
   width: 100%;
+  background: #181818;
+}
+
+#page1 #nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.3vw 5.5vw ; 
+  color: white;
+}
+#nav-part2 {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#nav-part2 h4{
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-style: italic;
+}
+
+.hero {
+  /* background: red; */
+  width: 72%;
+  margin-left: 27%;
+  height: fit-content;
+  overflow: hidden;
+}
+.hero:nth-child(2) {
+  margin-top: 15vh;
+}
+.hero h1 {
+  font-size: 8vw;
+  text-transform: uppercase;
+  line-height: 8vw;
+}
+.hero h2 {
+  font-size: 8vw;
+  text-transform: uppercase;
+  /* transform: translateY(100); */
+  text-decoration: underline;
+}
+.hero h2:nth-child(2) {
+  padding-left: 1vw;
+  font-size: 8vw;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+#hero3 {
+  display: flex;
+  transition: 1s;
+}
+#hero3 h2:hover {
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+  font-weight: 500;
 }
