@@ -63,5 +63,5 @@ function page1() {
   });
 }
 
-loadingAnimation(tl);
+// loadingAnimation(tl);
 page1(tl);

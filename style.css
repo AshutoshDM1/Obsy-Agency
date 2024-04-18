@@ -28,7 +28,7 @@ body {
   z-index: 99;
   background-color: #000000;
   padding: 24vh 10vw;
-  /* display: none; */
+  display: none;
 }
 #line {
   height: fit-content;
@@ -156,8 +156,8 @@ body {
 #hero3 h2 {
   font-size: 8vw;
   text-transform: uppercase;
-  /* transform: translateY(100); */
   text-decoration: underline;
+
 }
 .hero h2:nth-child(2) {
   padding-left: 1vw;
@@ -173,4 +173,69 @@ body {
   color: transparent;
   -webkit-text-stroke: 1px white;
   font-weight: 500;
+}
+
+/* page2 css */
+
+#page2 {
+  height: 100vh;
+  width: 100%;
+  background: #181818;
+}
+
+#video_container {
+  height: 60%;
+  width: 70%;
+  background: #181818;
+  position: relative;
+  left: 30%;
+  top: 15%;
+}
+
+#video_container video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+#videoCursor {
+  background-color: #ffb909;
+  height: 8vw;
+  width: 8vw;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 999;
+  top: -10%;
+  left: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#videoCursor i {
+  position: absolute;
+  font-size: 2.5vw;
+}
+
+
+/* page3 css  */
+
+#page3 {
+  min-height: 100vh;
+  width: 100%;
+  background: #3e3e3e;
+}
+/* page4 css  */
+
+#page4 {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: #202020;
+}
+
+#page_content {
+  
+  width: 72%;
+  margin-left: 28%;
+  background: #000;
 }
