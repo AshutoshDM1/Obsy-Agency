@@ -1,18 +1,14 @@
-try {
-  document.addEventListener("mousemove", function (dets) {
-    gsap.to("#crsr", {
-      left: dets.x,
-      top: dets.y,
-    });
+document.addEventListener("mousemove", function (dets) {
+  gsap.to("#crsr", {
+    left: dets.x,
+    top: dets.y,
   });
-  Shery.makeMagnet("#nav-part2 h4", {});
-}
-catch(err){
-console.log(err)
-}
+});
+Shery.makeMagnet("#nav-part2 h4", {});
 
-function loadingAnimation() {
-  let tl = gsap.timeline();
+let tl = gsap.timeline();
+function loadingAnimation(tl) {
+
   tl.from("h1", {
     y: 200,
     stagger: 0.5,
@@ -56,28 +52,16 @@ function loadingAnimation() {
     display: "none",
   });
 }
-function animateNav() {
-  gsap.from("#nav", {
-  opacity: 0,
-  duration: 2,
-});
-}
-let t2 = gsap.timeline();
 
-t2.from("#hero1 h1 ,#hero2 h1", {
-  y: 130,
-  duration: 0.3,
-  stagger: 0.2,
-});
-t2.from("#hero3 h2 ,#hero4 h1 ", {
-  y: 150,
-  duration: 0.4,
-  stagger: 0.2,
-});
-t2.from("", {
-  y: 130,
-  duration: 0.4,
-});
-makeMagnet();
-animateNav();
-// loadingAnimation();
+function page1() {
+  tl.from("#nav", {
+    opacity: 0,
+  });
+  tl.from("#hero1 h2, #hero2 h2 , #hero3 h2, #hero4 h2", {
+    y: 150,
+    stagger: 0.3,
+  });
+}
+
+loadingAnimation(tl);
+page1(tl);
