@@ -57,7 +57,7 @@ function page1() {
   tl.from("#nav", {
     opacity: 0,
   });
-  tl.from("#hero1 h2, #hero2 h2 , #hero3 h2, #hero4 h2", {
+  tl.from("#hero1 h2, #hero2 h2 , #hero3 h2,#hero3 h3, #hero4 h2", {
     y: 150,
     stagger: 0.3,
   });
