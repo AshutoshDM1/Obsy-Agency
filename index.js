@@ -38,7 +38,7 @@ function loadingAnimation(tl) {
   tl.from("#loader h1", {
     y: 200,
     stagger: 0.5,
-    duration: .4,
+    duration: .7,
     // delay: 0.5,
   });
   tl.from(" #line1-part1", {
@@ -65,14 +65,14 @@ function loadingAnimation(tl) {
     opacity: 1,
   });
   tl.to("#loader", {
-    delay: 4,
-    duration: 1,
+    delay: 3,
+    duration: .8,
     opacity: 0,
   });
   tl.from("#page1", {
-    y: -1200,
+    y: 1200,
     opacity: 0,
-    duration: 2,
+    duration: 1,
     ease: Power4,
   });
   tl.to("#loader", {
