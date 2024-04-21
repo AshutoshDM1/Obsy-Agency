@@ -30,16 +30,20 @@ html,
 body {
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
+  cursor: default;
 }
 #crsr {
   height: 2.5vw;
   width: 2.5vw;
   border-radius: 50%;
-  position: fixed;
-  z-index: 9999;
+  position: absolute;
+  z-index: 999999999;
+  pointer-events: none;
   border: 2px solid rgb(195, 195, 195);
   mix-blend-mode: difference;
   transform: translate(-150%, -150%);
+  /* transition:.1s ease-in; */
 }
 #loader {
   height: 100%;
@@ -48,7 +52,7 @@ body {
   z-index: 99;
   background-color: #000000;
   padding: 24vh 10vw;
-  display: none;
+  /* display: none; */
 }
 #line {
   height: fit-content;
@@ -92,7 +96,7 @@ body {
   padding-right: 1vw;
   font-weight: 900;
   opacity: 0;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
 }
 
@@ -144,6 +148,7 @@ body {
   justify-content: space-between;
   padding: 2.3vw 5.5vw;
   color: white;
+  cursor: none;
 }
 #nav-part2 {
   width: 15%;
@@ -164,7 +169,7 @@ body {
   margin-left: 27%;
   height: fit-content;
   overflow: hidden;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 .hero:nth-child(2) {
   margin-top: 15vh;
@@ -173,15 +178,6 @@ body {
   font-size: 8vw;
   text-transform: uppercase;
   line-height: 8vw;
-}
-#hero1::before {
-  content: "01";
-  position: absolute;
-  font-size: 3vw;
-  font-weight: 100;
-  font-family: "silk serif";
-  left: 20%;
-  top: 3.9%;
 }
 #hero3 h2 {
   font-size: 8vw;
@@ -407,7 +403,6 @@ body {
   text-transform: uppercase;
 }
 
-
 /* footer  */
 
 #footer {
@@ -425,11 +420,11 @@ body {
   text-transform: uppercase;
 }
 #footer h1::before {
-  content : "04";
+  content: "04";
   position: relative;
   font-size: 3vw;
   font-weight: 300;
-  font-family:  "silk serif";
+  font-family: "silk serif";
   left: -12%;
   top: 8%;
 }
@@ -441,10 +436,10 @@ body {
 }
 
 #footer-div {
-   display: flex;
-   align-items: flex-start;
-   justify-content: space-between;
-   padding: 4vw 15vw 6vw 0 ;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 4vw 15vw 6vw 0;
 }
 
 #footer-div h5 {
@@ -457,13 +452,13 @@ body {
   width: 20%;
 }
 #footer-div h6 {
-  font-size: .9vw;
+  font-size: 0.9vw;
   font-weight: 500;
   color: white;
   margin-bottom: 1.5vw;
 }
 
-#footer>h5 {
-  font-size: 1vw; 
+#footer > h5 {
+  font-size: 1vw;
   font-weight: 500;
 }

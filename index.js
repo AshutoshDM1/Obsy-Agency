@@ -1,23 +1,50 @@
-document.addEventListener("mousemove", function (dets) {
-  gsap.to("#crsr", {
-    left: dets.x,
-    top: dets.y,
-  });
+gsap.registerPlugin(ScrollTrigger);
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector("#main"),
+  smooth: true
 });
+
+locoScroll.on("scroll", ScrollTrigger.update);
+ScrollTrigger.scrollerProxy("#main", {
+  scrollTop(value) {
+    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+  },
+  getBoundingClientRect() {
+    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+  },
+  pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
+});
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+ScrollTrigger.refresh();
+
+
+const cursorCircle = document.querySelector("#crsr");
+    window.addEventListener("mousemove", function (dets) {
+        gsap.to("#crsr", {
+          left: dets.x,
+          top: dets.y,
+        });
+
+        // cursorCircle.style.top = dets.pageY + 'px';
+        // cursorCircle.style.left = dets.pageX + 'px';
+    });
 Shery.makeMagnet("#nav-part2 h4", {});
 
 let tl = gsap.timeline();
 function loadingAnimation(tl) {
 
-  tl.from("h1", {
+  tl.from("#loader h1", {
     y: 200,
     stagger: 0.5,
-    duration: 1,
-    delay: 0.5,
+    duration: .4,
+    // delay: 0.5,
   });
   tl.from(" #line1-part1", {
     opacity: 0,
-    duration: 1,
+    duration: 2,
+    // delay: 2.3,
     onStart: function () {
       let h5Timer = document.querySelector("#line1-part1 h5");
       let grow = 0;
@@ -43,7 +70,7 @@ function loadingAnimation(tl) {
     opacity: 0,
   });
   tl.from("#page1", {
-    y: 2000,
+    y: -1200,
     opacity: 0,
     duration: 2,
     ease: Power4,
@@ -63,5 +90,25 @@ function page1() {
   });
 }
 
-// loadingAnimation(tl);
+function navtextmagnet() {
+  window.addEventListener("mousemove", function (event) {
+    let x = event.clientX;
+    let y = event.clientY;
+    if(y<=100) {
+      gsap.to("#crsr", {
+        transform: "translate(-50%, -50%)",
+        cursor : "none",
+      });
+    }
+    else{
+      gsap.to("#crsr", {
+        transform: "translate(-150%, -150%)",
+        cursor : "default",
+      });
+    }
+});
+}
+
+navtextmagnet()
+loadingAnimation(tl);
 page1(tl);
