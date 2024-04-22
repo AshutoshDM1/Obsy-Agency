@@ -371,22 +371,20 @@ body {
 }
 .page_circle1:hover p {
   scale: 1.2;
-  opacity: 0;
+  opacity: 1;
 }
 .page_circle2:hover .circle-in {
   scale: 1;
 }
 .page_circle2:hover p {
   scale: 1;
-  opacity: 0; 
+  opacity: 1; 
 }
 
 .page_circle2 svg {
   height: 40%;
   rotate: -45deg;
 }
-
-
 
 /* page4 css  */
 
