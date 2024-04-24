@@ -52,7 +52,7 @@ body {
   z-index: 99;
   background-color: #000000;
   padding: 24vh 10vw;
-  display: none;
+  /* display: none; */
 }
 #line {
   height: fit-content;
@@ -204,7 +204,18 @@ body {
 #hero3 > h2:nth-child(2) {
   text-decoration: none;
 }
-
+#flag {
+  height: 25vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* opacity: 0; */
+  transform: translate(-50%, -50%);
+}
+#hero3 {
+  z-index: 999;
+  position: relative;
+}
 /* page2 css */
 
 #page2 {
@@ -214,12 +225,13 @@ body {
 }
 
 #video_container {
-  height: 60%;
-  width: 70%;
-  background: #181818;
+  height: 70%;
+  width: 75%;
+  background: #ff4b4b;
   position: relative;
-  left: 30%;
+  left: 23%;
   top: 15%;
+  cursor: none;
 }
 
 #video_container video {
@@ -392,7 +404,7 @@ body {
   position: relative;
   min-height: 100vh;
   width: 100%;
-  background: #202020;
+  background: #181818;
   padding-top: 8vh;
 }
 
@@ -468,7 +480,7 @@ body {
 #page5 {
   min-height: 90vh;
   width: 100%;
-  background: #202020;
+  background: #181818;
   padding-top: 5vh;
   position: relative;
 }
@@ -544,7 +556,7 @@ body {
 #footer {
   height: 90vh;
   width: 100%;
-  background: #202020;
+  background: #181818;
   padding-left: 28vw;
   padding-right: 2vw;
   position: relative;
